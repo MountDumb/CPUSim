@@ -20,14 +20,17 @@ namespace CPUSim
         STOP = 99
 
     }
+
     internal class Logic
     {
-        
+        //represents 40 RAM addresses
         uint[] _ram;
+
         uint _accumulator;
         uint _programCounter;
         OpCodes _command;
 
+        #region Properties
         internal uint[] RAM
         {
             get { return _ram; }
@@ -39,12 +42,13 @@ namespace CPUSim
         {
             get { return _accumulator; }
         }
+        #endregion
 
         internal Logic()
         {
             _ram = new uint[40];
             _accumulator = 0; 
-            //_programCounter keeps track of the pro
+            //_programCounter keeps track of the current step in a set of instructions.
             _programCounter = 0;
             
         }
@@ -70,7 +74,6 @@ namespace CPUSim
             {
                 case OpCodes.LOAD:
                     Load(inputValue);
-                    
                     break;
                 case OpCodes.ADD:
                     Add(inputValue);
