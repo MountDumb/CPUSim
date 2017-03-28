@@ -43,7 +43,8 @@ namespace CPUSim
         internal Logic()
         {
             _ram = new uint[40];
-            _accumulator = 0; //remmember thiis is unsigned.
+            _accumulator = 0; 
+            //_programCounter keeps track of the pro
             _programCounter = 0;
             
         }
@@ -85,10 +86,15 @@ namespace CPUSim
                     Store(inputValue);
                     break;
                 case OpCodes.JUMP:
+                    Jump(inputValue);
                     break;
                 case OpCodes.TEST_ZERO:
+                    TestZero();
                     break;
                 case OpCodes.TEST_GREATER_THAN:
+                    TestGreaterThan(inputValue);
+                    break;
+                    
                 case OpCodes.STOP:
                     Exit();
                     break;
