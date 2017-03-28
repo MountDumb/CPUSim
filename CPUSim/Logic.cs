@@ -28,19 +28,19 @@ namespace CPUSim
         uint _programCounter;
         OpCodes _command;
 
-        public uint[] RAM
+        internal uint[] RAM
         {
             get { return _ram; }
             set { _ram = value; }
             
         }
 
-        public uint Accumulator
+        internal uint Accumulator
         {
             get { return _accumulator; }
         }
 
-        public Logic()
+        internal Logic()
         {
             _ram = new uint[40];
             _accumulator = 0; //remmember thiis is unsigned.
@@ -48,7 +48,7 @@ namespace CPUSim
             
         }
 
-        public void RunProgram(List<string> instructions)
+        internal void RunProgram(List<string> instructions)
         {
             while (instructions.Count > _programCounter)
             {
@@ -57,7 +57,7 @@ namespace CPUSim
             
         }
 
-        public void TakeCommand(string inputString)
+        private void TakeCommand(string inputString)
         {
             _ram[_programCounter] = uint.Parse(inputString);
             _command = (OpCodes)(int.Parse(inputString.Substring(0, 2)));

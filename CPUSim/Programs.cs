@@ -10,7 +10,7 @@ namespace CPUSim
     {
         Logic _logic;
 
-        public Logic Logic
+        internal Logic Logic
         {
             //For being able to check values in a Console.
             get { return _logic; }
@@ -19,7 +19,7 @@ namespace CPUSim
         {
             _logic = new Logic();
         }
-        public void TrySubtracting()
+        internal void TrySubtracting()
         {
             _logic = new Logic();
             List<string> instructions = new List<string>();
@@ -34,6 +34,8 @@ namespace CPUSim
             //instruction "990000" shuts down the program,
             //so it's commented out in order to dispay the output below.
 
+            //Instructions are set up as List<> of strings and passed on 
+            //to _logic.runProgram() Method, in order to be executed.
             _logic.RunProgram(instructions);
 
             for (int i = 0; i < _logic.RAM.Length; i++)
@@ -46,7 +48,7 @@ namespace CPUSim
 
         }
 
-        public void TrySubtractingAgain()
+        internal void TrySubtractingAgain()
         {
 
         }
