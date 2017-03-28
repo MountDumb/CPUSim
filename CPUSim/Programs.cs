@@ -38,7 +38,8 @@ namespace CPUSim
 
             for (int i = 0; i < _logic.RAM.Length; i++)
             {
-                Console.WriteLine($"Adress {i}: {_logic.RAM[i]}");
+                
+            Console.WriteLine($"Address {i.ToString("D2")}: {_logic.RAM[i].ToString("D6")}");
             }
 
             Console.WriteLine($"Result: {_logic.RAM[22]}");
