@@ -31,12 +31,14 @@ namespace CPUSim
             instructions.Add("030020");
             instructions.Add("060022");
             //instructions.Add("990000");
+            _logic.RunProgram(instructions);
+
             //instruction "990000" shuts down the program,
             //so it's commented out in order to dispay the output below.
 
             //Instructions are set up as List<> of strings and passed on 
             //to _logic.runProgram() Method, in order to be executed.
-            _logic.RunProgram(instructions);
+
 
             for (int i = 0; i < _logic.RAM.Length; i++)
             {
