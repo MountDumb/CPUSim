@@ -60,7 +60,9 @@ namespace CPUSim
 
         private void TakeCommand(string inputString)
         {
+            //Puts the instruction into memory, so it can be executed. _programCounter points to where the instruction is stored.
             _ram[_programCounter] = uint.Parse(inputString);
+
             _command = (OpCodes)(int.Parse(inputString.Substring(0, 2)));
             uint inputValue = uint.Parse(inputString.Substring(2));
 
