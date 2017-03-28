@@ -36,9 +36,9 @@ namespace CPUSim
 
             _logic.RunProgram(instructions);
 
-            foreach (var item in _logic.RAM)
+            for (int i = 0; i < _logic.RAM.Length; i++)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"Adress {i}: {_logic.RAM[i]}");
             }
 
             Console.WriteLine($"Result: {_logic.RAM[22]}");
